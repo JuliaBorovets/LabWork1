@@ -1,4 +1,4 @@
 # Алгоритми та методи обчислень
 ## лабораторна робота 1
 
-![](https://imgur.com/UH8BYdV)
+![](https://i.imgur.com/UH8BYdV.jpg)
