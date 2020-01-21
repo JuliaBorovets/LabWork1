@@ -5,6 +5,7 @@ import android.text.method.ScrollingMovementMethod
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import java.lang.Exception
 
@@ -19,6 +20,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
+        
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        
         setContentView(R.layout.activity_main)
 
         //Завдання 1
