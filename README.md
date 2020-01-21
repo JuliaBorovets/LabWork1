@@ -1,4 +1,4 @@
 # Алгоритми та методи обчислень
 ## лабораторна робота 1
 
-![](file:///C:/Users/julia/Downloads/photo_2020-01-21_14-50-20.jpg)
+![](https://imgur.com/UH8BYdV)
