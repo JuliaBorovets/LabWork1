@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Aлгоритми та методи обчислення</string>
+    <string name="first">Завдання 1</string>
+    <string name="second">Завдання 2</string>
+    <string name="third">Завдання 3</string>
+    <string name="a">a</string>
+    <string name="b">b</string>
+    <string name="c">c</string>
+    <string name="d">d</string>
+    <string name="x">x</string>
+    <string name="r">r</string>
+    <string name="aa">a</string>
+    <string name="bb">b</string>
+    <string name="n">n</string>
+    <string name="p">p</string>
+    <string name="res1">Результат</string>
+    <string name="res2">Результат</string>
+    <string name="res3">Результат</string>
+</resources>
