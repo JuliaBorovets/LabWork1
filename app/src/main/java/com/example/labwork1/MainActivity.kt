@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         button1.setOnClickListener {
 
             try {
+                textView7?.text = " "
 
                 val a = userInputA.text.toString().toDouble()
                 val b = userInputB.text.toString().toDouble()
@@ -70,6 +71,7 @@ class MainActivity : AppCompatActivity() {
         button2.setOnClickListener {
 
             try {
+                textView11?.text = " "
 
                 val x = userInputX.text.toString().toDouble()
                 val r = userInputR.text.toString().toDouble()
@@ -99,6 +101,8 @@ class MainActivity : AppCompatActivity() {
         button3.setOnClickListener {
 
             try {
+
+                textView12?.text = " "
 
                 val n = userInputN.text.toString().toInt()
                 val p = userInputP.text.toString().toInt()
