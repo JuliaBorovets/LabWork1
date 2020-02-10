@@ -2,8 +2,6 @@ package com.example.labwork1
 
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
-import android.view.Window
-import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -21,10 +19,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-
-        requestWindowFeature(Window.FEATURE_NO_TITLE) //will hide the title
-        supportActionBar?.hide()
-
         setContentView(R.layout.activity_main)
 
         //Завдання 1
@@ -41,7 +35,6 @@ class MainActivity : AppCompatActivity() {
         button1.setOnClickListener {
 
             try {
-                textView7?.text = " "
 
                 val a = userInputA.text.toString().toDouble()
                 val b = userInputB.text.toString().toDouble()
@@ -72,7 +65,6 @@ class MainActivity : AppCompatActivity() {
         button2.setOnClickListener {
 
             try {
-                textView11?.text = " "
 
                 val x = userInputX.text.toString().toDouble()
                 val r = userInputR.text.toString().toDouble()
@@ -102,8 +94,6 @@ class MainActivity : AppCompatActivity() {
         button3.setOnClickListener {
 
             try {
-
-                textView12?.text = " "
 
                 val n = userInputN.text.toString().toInt()
                 val p = userInputP.text.toString().toInt()
