@@ -2,6 +2,7 @@ package com.example.labwork1
 
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
+import android.view.Window
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
@@ -21,9 +22,9 @@ class MainActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
 
-        window.setFlags(
-            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        requestWindowFeature(Window.FEATURE_NO_TITLE) //will hide the title
+        supportActionBar?.hide()
+
         setContentView(R.layout.activity_main)
 
         //Завдання 1

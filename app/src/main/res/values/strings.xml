@@ -16,4 +16,6 @@
     <string name="res1">Результат</string>
     <string name="res2">Результат</string>
     <string name="res3">Результат</string>
+    <string name="fromFile1">З файлу</string>
+
 </resources>
