@@ -24,13 +24,13 @@ class Calculator {
 
 
     @Throws(ArithmeticException::class)
-    fun calculateThird(n: Int, p: Int): Double{
+    fun calculateThird(n: Double, p: Double): Double{
         var res = 0.0
         if (n < 0 || p < 0){
             print("Неможливо обчислити")
         } else{
-            for (a in 0..n){
-                for (b in 0..p){
+            for (a in 0..n.toInt()){
+                for (b in 0..p.toInt()){
                     res = a.toDouble().pow(b.toDouble()) + b.toDouble().pow(a.toDouble())
                 }
             }

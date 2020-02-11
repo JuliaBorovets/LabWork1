@@ -150,16 +150,17 @@
                     android:layout_marginEnd="30dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/button"
+                    app:layout_constraintTop_toBottomOf="@+id/buttonResult1"
                     tools:text="результат першого завдання" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/buttonResult1"
                     android:layout_width="150dp"
                     android:layout_height="40dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="40dp"
                     android:background="@color/button_color"
+                    android:onClick="task1"
                     android:text="@string/res1"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/editText" />
@@ -233,7 +234,7 @@
                     app:layout_constraintTop_toTopOf="@+id/textView9" />
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/buttonResult2"
                     android:layout_width="150dp"
                     android:layout_height="40dp"
                     android:layout_marginStart="20dp"
@@ -252,7 +253,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.49"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/button2"
+                    app:layout_constraintTop_toBottomOf="@+id/buttonResult2"
                     tools:text="результат другого завдання" />
 
                 <TextView
@@ -287,7 +288,7 @@
                     android:layout_marginEnd="30dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/button3"
+                    app:layout_constraintTop_toBottomOf="@+id/buttonResult3"
                     tools:text="результат третього завдання" />
 
                 <TextView
@@ -310,15 +311,15 @@
                     app:layout_constraintTop_toBottomOf="@+id/editText9" />
 
                 <Button
-                    android:id="@+id/button4"
+                    android:id="@+id/buttonFromFile1"
                     android:layout_width="150dp"
                     android:layout_height="40dp"
                     android:layout_marginStart="20dp"
                     android:background="@color/button_color"
                     android:text="@string/fromFile1"
-                    app:layout_constraintBottom_toBottomOf="@+id/button"
-                    app:layout_constraintStart_toEndOf="@+id/button"
-                    app:layout_constraintTop_toTopOf="@+id/button" />
+                    app:layout_constraintBottom_toBottomOf="@+id/buttonResult1"
+                    app:layout_constraintStart_toEndOf="@+id/buttonResult1"
+                    app:layout_constraintTop_toTopOf="@+id/buttonResult1" />
 
                 <EditText
                     android:id="@+id/editText10"
@@ -342,18 +343,18 @@
                     app:srcCompat="@drawable/third" />
 
                 <Button
-                    android:id="@+id/button5"
+                    android:id="@+id/buttonFromFile2"
                     android:layout_width="150dp"
                     android:layout_height="40dp"
                     android:layout_marginStart="20dp"
                     android:background="@color/button_color"
                     android:text="@string/fromFile1"
-                    app:layout_constraintBottom_toBottomOf="@+id/button2"
-                    app:layout_constraintStart_toEndOf="@+id/button2"
-                    app:layout_constraintTop_toTopOf="@+id/button2" />
+                    app:layout_constraintBottom_toBottomOf="@+id/buttonResult2"
+                    app:layout_constraintStart_toEndOf="@+id/buttonResult2"
+                    app:layout_constraintTop_toTopOf="@+id/buttonResult2" />
 
                 <Button
-                    android:id="@+id/button3"
+                    android:id="@+id/buttonResult3"
                     android:layout_width="150dp"
                     android:layout_height="40dp"
                     android:layout_marginStart="20dp"
@@ -364,14 +365,24 @@
                     app:layout_constraintTop_toBottomOf="@+id/editText9" />
 
                 <Button
-                    android:id="@+id/button6"
+                    android:id="@+id/buttonFromFile3"
                     android:layout_width="150dp"
                     android:layout_height="40dp"
                     android:layout_marginStart="20dp"
                     android:background="@color/button_color"
                     android:text="@string/fromFile1"
-                    app:layout_constraintStart_toEndOf="@+id/button3"
-                    app:layout_constraintTop_toTopOf="@+id/button3" />
+                    app:layout_constraintStart_toEndOf="@+id/buttonResult3"
+                    app:layout_constraintTop_toTopOf="@+id/buttonResult3" />
+
+                <TextView
+                    android:id="@+id/pathToFile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="70dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textView12"
+                    tools:text="шлях до файлу" />
                 />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
