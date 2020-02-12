@@ -6,30 +6,37 @@ import android.view.Window
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import java.io.IOException
-import java.io.InputStream
+import java.io.*
 import java.lang.Exception
-import kotlin.math.roundToInt
-
 
 class MainActivity : AppCompatActivity() {
 
     private var textView7: TextView? = null
     private var textView11: TextView? = null
-
     private var textView12: TextView? = null
+    private var pathFile: String? = null
+    var nameOfFile: String = "myText.txt"
+    private val baseContextOfFile = """
+        2,3, 1, 6,
+        6, 8,
+        4, 5
+    """.trimIndent()
+    private var fileToWrite: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-
         requestWindowFeature(Window.FEATURE_NO_TITLE) //will hide the title
         supportActionBar?.hide()
-
-
         setContentView(R.layout.activity_main)
+
+        pathFile = getExternalFilesDir(null)?.absolutePath.toString()
+        pathToFile.append(pathFile)
+
+
 
         //Завдання 1
         val userInputA: EditText = findViewById(R.id.editText)
@@ -68,14 +75,19 @@ class MainActivity : AppCompatActivity() {
             try {
                 textView7?.text = " "
 
-                var string: String? = ""
                 try {
-                    val inputStream: InputStream = assets.open("myText.txt")
-                    val size: Int = inputStream.available()
-                    val buffer = ByteArray(size)
-                    inputStream.read(buffer)
-                    string = String(buffer)
-                    val array: List<String> = string.split(",")
+                    val sdPath = File("$pathFile/$nameOfFile")
+                    if (!sdPath.exists()){
+                        createFile()
+                    }
+
+                    val strSdPath: String = File(sdPath.absolutePath.toString()).toString()
+                    val file = File(strSdPath)
+
+                    val inputAsString = FileInputStream(file).bufferedReader().use { it.readText() }
+
+
+                    val array: List<String> = inputAsString.split(",")
 
                     val a = array[0].toDouble()
                     val b = array[1].toDouble()
@@ -139,15 +151,21 @@ class MainActivity : AppCompatActivity() {
             try {
                 textView11?.text = " "
 
-                var string2: String? = ""
 
                 try {
-                    val inputStream: InputStream = assets.open("myText.txt")
-                    val size: Int = inputStream.available()
-                    val buffer = ByteArray(size)
-                    inputStream.read(buffer)
-                    string2 = String(buffer)
-                    val array: List<String> = string2.split(",")
+                    val sdPath = File("$pathFile/$nameOfFile")
+                    if (!sdPath.exists()){
+                        createFile()
+                    }
+
+                    val strSdPath: String = File(sdPath.absolutePath.toString()).toString()
+                    val file = File(strSdPath)
+
+                    val inputAsString = FileInputStream(file).bufferedReader().use { it.readText() }
+
+
+                    val array: List<String> = inputAsString.split(",")
+
 
                     val r = array[4].toDouble()
                     val x = array[5].toDouble()
@@ -208,41 +226,53 @@ class MainActivity : AppCompatActivity() {
             try {
                 textView12?.text = " "
 
-                var string3: String? = ""
                 try {
-                    val inputStream: InputStream = assets.open("myText.txt")
-                    val size: Int = inputStream.available()
-                    val buffer = ByteArray(size)
-                    inputStream.read(buffer)
-                    string3 = String(buffer)
-                    val array: List<String> = string3.split(",")
+                    val sdPath = File("$pathFile/$nameOfFile")
+                    if (!sdPath.exists()){
+                        createFile()
+                    }
+
+                    val strSdPath: String = File(sdPath.absolutePath.toString()).toString()
+                    val file = File(strSdPath)
+
+                    val inputAsString = FileInputStream(file).bufferedReader().use { it.readText() }
+
+
+                    val array: List<String> = inputAsString.split(",")
+
 
                     val n = array[6]
                     val p = array[7]
 
-
-
                     userInputN.setText(n)
                     userInputP.setText(p)
-
 
                     val resultThird = Calculator()
                     val res3 = resultThird.calculateThird(n.toDouble(), p.toDouble())
 
-
                     textView12?.append(res3.toString())
-
 
                 } catch (e: IOException) {
                     e.printStackTrace()
                 }
 
-
             } catch (e: Exception) {
                 textView12?.append("Неможливо! \n")
             }
         }
-
-
     }
+
+    fun createFile(){
+        if (!File("$pathFile/$nameOfFile").exists()){
+            val inFile = File("$pathFile/$nameOfFile")
+            PrintWriter(inFile).use { out -> out.println(baseContextOfFile) }
+            Toast.makeText(
+                this,
+                "File was created!",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
+
+
 }
